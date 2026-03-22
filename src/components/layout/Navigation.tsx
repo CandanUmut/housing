@@ -21,6 +21,12 @@ export function Navigation() {
     el?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleMortgageCalcClick = () => {
+    setIsOpen(false);
+    const el = document.querySelector('#mortgage-calculator');
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/90 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -43,6 +49,13 @@ export function Navigation() {
                 {t.nav[key]}
               </button>
             ))}
+            <button
+              onClick={handleMortgageCalcClick}
+              className="text-sm font-ui text-accent-gold hover:text-accent-amber transition-colors font-semibold"
+              title={t.nav.mortgageCalculator}
+            >
+              🧮 {t.nav.mortgageCalculator}
+            </button>
             <LanguageToggle />
           </div>
 
@@ -71,6 +84,12 @@ export function Navigation() {
                 {t.nav[key]}
               </button>
             ))}
+            <button
+              onClick={handleMortgageCalcClick}
+              className="block w-full text-left text-sm font-ui text-accent-gold hover:text-accent-amber py-2 transition-colors font-semibold"
+            >
+              🧮 {t.nav.mortgageCalculator}
+            </button>
           </div>
         </div>
       )}
